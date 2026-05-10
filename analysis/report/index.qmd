@@ -105,7 +105,7 @@ errors or have better approaches, please let me know in
 the Let's Connect section at the end.
 
 
-![Settling in for version control setup.](media/images/placeholder-coffee-04.jpg){.img-fluid width=30% fig-align="center"}
+![Settling in for version control setup.](media/images/ambiance1.png){.img-fluid width=30% fig-align="center"}
 
 *GitHub provides the remote hosting layer that makes
 Git-based collaboration practical for research teams.*

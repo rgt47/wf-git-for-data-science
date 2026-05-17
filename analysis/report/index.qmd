@@ -1,8 +1,5 @@
 ---
 title: "Setting Up Git for Data Science Workflows"
-subtitle: >
-  A practical guide to version control for solo analysts
-  and small research teams
 author: "Ronald 'Ryy' G. Thomas"
 date: "2026-02-11"
 categories: [git, reproducibility]
@@ -25,7 +22,7 @@ format:
 
 ![Git logo and branching diagram representing
 version control
-workflows](media/images/hero.png){.img-fluid width=80%}
+workflows](media/images/hero.png){.img-fluid width=80% fig-align="center"}
 
 *Version control is the foundation of every
 reproducible research workflow.*

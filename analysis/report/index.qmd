@@ -46,15 +46,15 @@ hosting service, Git enables collaboration, code review,
 and reproducibility at a level that manual file management
 simply cannot match.
 
-This post documents my own path from "I'll just save
-copies" to a reliable Git-based workflow. It covers
+We document a path from "I'll just save copies" to a
+reliable Git-based workflow. The post covers
 installation, basic commands, branching, collaboration,
-and the commit message practices that I found most
-valuable. I am writing as a learner, not as an expert, and
-I welcome corrections or suggestions from readers who
-have found better approaches.
+and the commit message practices that proved most
+valuable. This is written as a learner, not as an
+expert, and corrections or suggestions from readers
+who have found better approaches are welcome.
 
-More formally, this post documents the version-control concern
+More formally, we document the version-control concern
 that cuts across multiple layers of the Workflow Construct
 described in [post 52](/posts/52-workflow-construct/). Git is
 not itself a layer; it is the mechanism by which the
@@ -147,9 +147,9 @@ sudo apt update && sudo apt install git
 # What is Git?
 
 Git is a distributed version control system. In plain
-terms, it is a tool that records every change you make to
+terms, it is a tool that records every change made to
 a set of files, stores those changes in a structured
-history, and allows you to retrieve any previous version
+history, and allows retrieval of any previous version
 of any file at any time. Think of it as an unlimited
 "undo" system that also tracks who made each change and
 why.
@@ -170,9 +170,9 @@ chaos of emailed files and shared drives.
 
 # Getting Started: Initial Configuration
 
-Before using Git for the first time, you need to set your
-identity. Git attaches your name and email to every commit
-you make.
+Before using Git for the first time, one needs to set
+an identity. Git attaches a name and email to every
+commit.
 
 ```bash
 git config --global user.name "Your Name"
@@ -187,7 +187,7 @@ git config --global init.defaultBranch main
 git config --global core.editor "vim"
 ```
 
-To verify your configuration:
+To verify the configuration:
 
 ```bash
 git config --list
@@ -195,15 +195,15 @@ git config --list
 
 **Setting up SSH authentication with GitHub:**
 
-SSH keys allow you to push and pull from GitHub without
-entering your password each time. Generate a key pair:
+SSH keys allow pushing and pulling from GitHub without
+entering a password each time. Generate a key pair:
 
 ```bash
 ssh-keygen -t ed25519 \
   -C "you@example.com"
 ```
 
-Then add the public key to your GitHub account under
+Then add the public key to the GitHub account under
 Settings > SSH and GPG keys. Test the connection:
 
 ```bash
@@ -296,7 +296,7 @@ and why.
 git push origin main
 ```
 
-This sends your local commits to GitHub, making them
+This sends local commits to GitHub, making them
 available to collaborators and serving as an off-site
 backup.
 
@@ -306,8 +306,8 @@ backup.
 git pull origin main
 ```
 
-Always pull before starting new work to ensure you have
-the latest version.
+Always pull before starting new work to ensure the
+latest version is available.
 
 
 ![Soft atmospheric image suggesting focused
@@ -321,9 +321,9 @@ version control headaches downstream.*
 
 Branches are one of Git's most powerful features. A
 branch is an independent line of development that
-diverges from the main project history. You can
+diverges from the main project history. One can
 experiment freely on a branch without affecting the
-stable version of your code.
+stable version of the code.
 
 **Creating and switching to a new branch:**
 
@@ -454,7 +454,7 @@ of the most valuable artifacts in a project's history.
 
 A valuable practice involves writing commit messages as
 though the commit, when applied, will perform a specific
-action. Construct your message so that it logically
+action. Construct each message so that it logically
 completes the sentence: "If applied, this commit
 will..."
 
@@ -488,13 +488,13 @@ The Angular project provides an exemplary model for
 structured commit messages. Their convention uses
 specific prefixes that categorize each commit:
 
-- `feat:` -- a new feature
-- `fix:` -- a bug fix
-- `docs:` -- documentation changes
-- `style:` -- formatting, no code change
-- `refactor:` -- code restructuring
-- `test:` -- adding or updating tests
-- `chore:` -- maintenance tasks
+- `feat:`: a new feature
+- `fix:`: a bug fix
+- `docs:`: documentation changes
+- `style:`: formatting, no code change
+- `refactor:`: code restructuring
+- `test:`: adding or updating tests
+- `chore:`: maintenance tasks
 
 By incorporating these prefixes, the commit history
 becomes a structured resource for understanding the
@@ -533,7 +533,7 @@ git show master:analysis.Rmd
 ```
 
 This displays the file contents as they existed on the
-specified branch or commit, without modifying your
+specified branch or commit, without modifying the
 working directory.
 
 **Restoring a file from another branch:**
@@ -548,8 +548,8 @@ git checkout main -- data/results.csv
 git checkout abc1234
 ```
 
-Where `abc1234` is the commit hash. This places you in a
-"detached HEAD" state where you can inspect the old
+Where `abc1234` is the commit hash. This produces a
+"detached HEAD" state where one can inspect the old
 version. To return to the current state:
 
 ```bash
@@ -580,7 +580,7 @@ git pull --allow-unrelated-histories
 
 **Large files accidentally committed:**
 
-If you commit a large data file by mistake, it becomes
+If a large data file is committed by mistake, it becomes
 part of the repository history even after deletion. Use
 `.gitignore` to prevent this:
 
@@ -601,7 +601,7 @@ stage and commit.
 **Authentication failures:**
 
 If `git push` fails with a permission error, verify that
-your SSH key is added to the agent:
+the SSH key is added to the agent:
 
 ```bash
 eval "$(ssh-agent -s)"
@@ -634,9 +634,9 @@ mkdir /tmp/test-repo && cd /tmp/test-repo && \
 ```
 
 If `git --version` returns 2.30+, the config shows
-your name and email, SSH authenticates successfully,
-and the test commit appears in the log, the setup is
-complete.
+the correct name and email, SSH authenticates
+successfully, and the test commit appears in the log,
+the setup is complete.
 
 # Daily Workflow
 
@@ -654,7 +654,7 @@ complete.
 
 1. **Never commit credentials or API keys.** Add
    `.env`, `.Renviron`, and credential files to
-   `.gitignore` before your first commit. Once a secret
+   `.gitignore` before the first commit. Once a secret
    is in Git history, removing it completely requires
    rewriting history.
 
@@ -663,7 +663,7 @@ complete.
    belong in Git. Use Git LFS or external storage for
    large data.
 
-3. **Pull before you push.** When collaborating, always
+3. **Pull before pushing.** When collaborating, always
    `git pull` before starting new work. Pushing without
    pulling first leads to merge conflicts that could have
    been avoided.
@@ -824,13 +824,13 @@ experiment becomes safe to try, and every collaboration
 becomes structured.
 
 What I learned most clearly from adopting Git is that
-version control changes the way you think about your
-work. Once every change is tracked, you become more
-willing to experiment, more disciplined about
-documentation, and more confident that nothing important
-will be lost.
+version control changes the way one approaches work.
+Once every change is tracked, there is greater
+willingness to experiment, more disciplined
+documentation, and greater confidence that nothing
+important will be lost.
 
-For readers getting started with Git, my advice is
+For readers getting started with Git, the advice is
 straightforward:
 
 - Start with the core workflow: `init`, `add`, `commit`,
@@ -838,45 +838,45 @@ straightforward:
 - Use branches for every experiment, no matter how small.
 - Write commit messages in the imperative mood with a
   clear prefix.
-- Add a `.gitignore` before your first commit.
-- Pull before you push when collaborating.
+- Add a `.gitignore` before the first commit.
+- Pull before pushing when collaborating.
 
-The commit history you build today is the documentation
-your future self will rely on. Make it a habit to create
-messages that stand as informative, concise, and
-consistent narratives of your project's evolution.
+The commit history built today is the documentation one
+will rely on later. Make it a habit to create messages
+that stand as informative, concise, and consistent
+narratives of a project's evolution.
 
 
 # See Also
 
 **Related blog posts:**
 
-- [Setting Up Dotfiles on GitHub](/posts/24-setupdotfilesongithub/setupdotfilesongithub/analysis/report/index.qmd)
-  -- Managing configuration files with Git
-- [Configuring the Terminal for Data Science](/posts/01-configtermzsh/configtermzsh/analysis/report/index.qmd)
-  -- Terminal setup that complements a Git workflow
+- [Setting Up Dotfiles on GitHub](/posts/24-setupdotfilesongithub/setupdotfilesongithub/analysis/report/index.qmd):
+  Managing configuration files with Git
+- [Configuring the Terminal for Data Science](/posts/01-configtermzsh/configtermzsh/analysis/report/index.qmd):
+  Terminal setup that complements a Git workflow
 
 **Key external resources:**
 
-- [Pro Git Book](https://git-scm.com/book/en/v2) --
+- [Pro Git Book](https://git-scm.com/book/en/v2):
   The definitive free reference by Scott Chacon and Ben
   Straub
 - [Git Official Documentation](
-  https://git-scm.com/doc) -- Command reference and
+  https://git-scm.com/doc): Command reference and
   manual pages
-- [GitHub Skills](https://skills.github.com/) --
+- [GitHub Skills](https://skills.github.com/):
   Interactive courses for learning GitHub workflows
 - [Atlassian Git Tutorials](
-  https://www.atlassian.com/git/tutorials) -- Clear,
+  https://www.atlassian.com/git/tutorials): Clear,
   well-structured guides for all skill levels
 - [Learn Git Branching](
-  https://learngitbranching.js.org/) -- Interactive
+  https://learngitbranching.js.org/): Interactive
   visualization tool for understanding branches
 - [Git Tower Learning Resources](
-  https://www.git-tower.com/learn/) -- Tutorials and
+  https://www.git-tower.com/learn/): Tutorials and
   cheat sheets
 - [GitKraken Git Cheat Sheet](
-  https://www.gitkraken.com/git-cheat-sheet) -- Quick
+  https://www.gitkraken.com/git-cheat-sheet): Quick
   command reference
 - Bryan, J. (2018). Excuse Me, Do You Have a Moment to
   Talk About Version Control? *The American

@@ -7,7 +7,7 @@ description: >
   I did not really know how much time I was wasting
   without proper version control until a single
   overwritten script cost me three days of work.
-image: "media/images/hero.jpg"
+image: "media/images/hero.png"
 document-type: "blog"
 draft: false
 execute:

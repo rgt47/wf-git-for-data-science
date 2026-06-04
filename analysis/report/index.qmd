@@ -9,7 +9,7 @@ description: >
   overwritten script cost me three days of work.
 image: "media/images/hero.png"
 document-type: "blog"
-draft: false
+draft: true
 execute:
   echo: true
   warning: false
@@ -716,7 +716,7 @@ rm -rf .git
 This is irreversible and destroys all project history.
 
 ![UCSD Geisel Library, a landmark of research and
-learning](media/images/ambiance3.jpg){.img-fluid}
+learning](media/images/ambiance3.png){.img-fluid}
 
 *Disciplined version control practices support the same
 rigor that characterizes scholarly research.*

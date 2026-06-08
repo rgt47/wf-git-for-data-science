@@ -1,6 +1,6 @@
 ---
 title: "Setting Up Git for Data Science Workflows"
-author: "Ronald 'Ryy' G. Thomas"
+author: "Ronald G. Thomas"
 date: "2026-02-11"
 categories: [git, reproducibility]
 description: >

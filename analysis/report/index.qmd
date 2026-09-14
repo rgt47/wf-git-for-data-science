@@ -3,7 +3,7 @@ title: "Setting Up Git for Data Science Workflows"
 author: "Ronald G. Thomas"
 date: "2026-02-11"
 categories: [git, reproducibility]
-description: "I did not really know how much time I was wasting without proper version control until a single overwritten script cost me three days of work."
+description: "Working without proper version control wastes more time than it saves: a single overwritten script cost me three days of work."
 image: "media/images/hero.jpg"
 document-type: "blog"
 draft: false
@@ -81,13 +81,13 @@ reproducible research workflow.*
 
 # Introduction
 
-I did not really know how much damage a missing backup
-could cause until I accidentally overwrote three days of
+A missing backup can do more damage than it seems
+possible to lose. I accidentally overwrote three days of
 analysis work on an Alzheimer's disease dataset. The file
 was gone, the changes were irreversible, and the only
 copy lived on a USB drive I had left at the office. That
 experience convinced me that version control was not
-optional for data science---it was essential.
+optional for data science; it was essential.
 
 Git is the most widely adopted version control system in
 both software engineering and data science. It tracks
